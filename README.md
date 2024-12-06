@@ -77,4 +77,8 @@ Current Weather:
 
 Hourly Forecast:
 
+<<<<<<< HEAD
 - GET "https://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={CITY_NAME}&hours=24"
+=======
+- GET "https://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={CITY_NAME}&hours=24"
+>>>>>>> a3361c4dccbb1f05c920ca94d9ceace8f0e7588c
