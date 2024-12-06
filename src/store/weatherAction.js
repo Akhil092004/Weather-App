@@ -1,10 +1,11 @@
 // store/weatherActions.js
 import { startFetch, fetchSuccess, fetchFailure } from './weatherSlice';
+import conf from '../config/config';
 
 export const fetchWeather = (city) => async (dispatch) => {
   dispatch(startFetch());
 
-  const apiKey = "5a153c68474f43d7a87124536240612";
+  const apiKey = conf.apiKey;
   
   try {
     const weatherResponse = await fetch(
