@@ -33,4 +33,4 @@ export const fetchWeather = (city) => async (dispatch) => {
     // Log the error
     console.error('Error fetching weather data:', error);
   }
-};
+}; 
