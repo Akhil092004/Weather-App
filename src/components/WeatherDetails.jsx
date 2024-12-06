@@ -31,15 +31,17 @@ const WeatherDetails = () => {
 
   // Flatten both today's and tomorrow's forecast hour data and take the next 8 hours starting from the current hour
   const getNext8Hours = () => {
-    const hours = [];
-    
-    // First, collect hours from today
     const todayHours = weatherData.forecast.forecastday[0].hour.slice(currentHour);
-    
-    // If we don't have 8 hours, collect from tomorrow's forecast
-    const remainingHours = 8 - todayHours.length;
-    const tomorrowHours = weatherData.forecast.forecastday[1].hour.slice(0, remainingHours);
-    
+  
+    // If today's hours are sufficient
+    if (todayHours.length >= 8) {
+      return todayHours.slice(0, 8); // Only take the next 8 hours from today
+    }
+  
+    // If we need additional hours from tomorrow
+    const remainingHoursNeeded = 8 - todayHours.length;
+    const tomorrowHours = weatherData.forecast.forecastday[1].hour.slice(0, remainingHoursNeeded);
+  
     return [...todayHours, ...tomorrowHours];
   };
 
