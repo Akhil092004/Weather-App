@@ -6,6 +6,8 @@ export const fetchWeather = (city) => async (dispatch) => {
   dispatch(startFetch());
 
   const apiKey = conf.apiKey;
+
+  console.log(apiKey)
   
   try {
     const weatherResponse = await fetch(
