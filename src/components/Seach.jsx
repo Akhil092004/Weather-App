@@ -15,6 +15,12 @@ const Search = () => {
     dispatch(fetchWeather(city));
   };
 
+  const handleKeyPress = (e) => {
+    if(e.key == "Enter"){
+      handleSearch()
+    }
+  }
+
   return (
     <div className="flex items-center space-x-4">
       <input
@@ -22,6 +28,7 @@ const Search = () => {
         placeholder="Enter city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
+        onKeyDown={handleKeyPress}
         className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
       />
       <button
